@@ -1,7 +1,7 @@
-<<<<<<< HEAD
 .section1 {
   color: #4D4D4D;
   font-size: 18px;
+  margin-top: 50px;
 }
 .section1__main-block {
   display: flex;
@@ -15,7 +15,7 @@
 }
 .section1__right-block {
   padding: 30px 0 0 100px;
-  width: 650px;
+  width: 720px;
 }
 .section__left-block {
   width: 650px;
@@ -36,6 +36,9 @@
 }
 .section1__main-menu p {
   text-align: center;
+}
+.section1__main-menu {
+  margin-top: 70px;
 }
 @media (max-width: 950px) {
   .section1__main-block {
@@ -65,8 +68,10 @@
   .section1 {
     font-size: 16px;
   }
+  .section1__main-menu {
+    margin-top: 30px;
+  }
 }
-=======
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -74,9 +79,7 @@
  *    user zoom.
  */
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-transition: .5s ease;
+  box-sizing: border-box;
   transition: .5s ease;
 }
 html {
@@ -244,8 +247,8 @@ figure {
  * Address differences between Firefox and other browsers.
  */
 hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
   height: 0;
 }
 /**
@@ -351,8 +354,7 @@ input {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -374,6 +376,7 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
+  -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box;
@@ -432,19 +435,10 @@ th {
   padding: 0;
 }
 .header-page {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   overflow: hidden;
   /* End __header-top */
@@ -452,41 +446,22 @@ th {
 }
 .header-page__header-top {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
   padding: .5rem 4rem;
   background-color: white;
   /* End __logo */
   /* End __main-menu */
 }
 .header-page__header-top__main-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
   list-style: none;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-size: .9rem;
 }
 .header-page__header-top__main-menu a {
@@ -499,24 +474,14 @@ th {
 }
 .header-page__header-top__main-menu a.active,
 .header-page__header-top__main-menu a:hover {
-  -webkit-box-shadow: 0 0 0 1px #f08080;
-          box-shadow: 0 0 0 1px #f08080;
+  box-shadow: 0 0 0 1px #f08080;
   color: #f08080;
 }
 .header-page__header-middle {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
   width: 100%;
   color: white;
   padding: 4rem;
@@ -524,19 +489,9 @@ th {
   /* End __slide */
 }
 .header-page__header-middle__slide {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
 /* End .header-page */
->>>>>>> 144afbc876e9dfa763cd16a28b5e0f1dbff207b3
