@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .section1 {
 	color:#4D4D4D;
 	font-size: 18px;
@@ -67,3 +68,66 @@ width:650px;
 	font-size: 16px;
 }
 	}
+=======
+@import "normalize.less";//сброс стилей
+@import "mixins.less";//все примеси(миксины)
+@import "variables.less";//все переменные
+
+.header-page{
+	.flex-cont(column, nowrap);
+	width: 100%;
+	overflow: hidden;
+	
+	&__header-top{
+		width: 100%;
+		.flex-cont(row, nowrap, space-between, center);
+		padding: .5rem 4rem;
+		background-color: white;
+
+		&__logo{
+
+		}
+		/* End __logo */
+
+		&__main-menu{
+			.flex-cont(row,nowrap);
+			list-style: none;
+			box-sizing: border-box;
+			font-size: .9rem;
+			& a{
+				font-size: 1em;
+				color: rgb(100, 100, 100);
+				padding: .6em .8em;
+				margin-left: .3em;
+				border-radius: .3em;
+				text-decoration: none;
+				
+				&.active, &:hover{
+					box-shadow: 0 0 0 1px @main-color;
+					color: @main-color;
+				}
+			}
+
+		}
+		/* End __main-menu */
+
+	} 
+	/* End __header-top */
+	
+	&__header-middle{
+		.flex-cont(column, nowrap, center, flex-start);
+		width: 100%;
+		color: white;
+		padding: 4rem;
+		background: rgb(60, 60, 60s);
+
+		&__slide{
+			.flex-cont(column, nowrap, center, center);
+		}
+		/* End __slide */
+
+	}
+	/* End __header-middle */
+} 
+/* End .header-page */
+>>>>>>> 144afbc876e9dfa763cd16a28b5e0f1dbff207b3
