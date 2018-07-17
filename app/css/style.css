@@ -378,7 +378,6 @@ th {
           align-items: center;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
   /* End __header-top */
   /* End __header-middle */
 }
@@ -401,6 +400,9 @@ th {
   background-color: white;
   /* End __logo */
   /* End __main-menu */
+}
+.header-page__header-top__toggle-menu {
+  display: none;
 }
 .header-page__header-top__main-menu {
   display: -webkit-box;
@@ -435,6 +437,33 @@ th {
           box-shadow: 0 0 0 1px #f08080;
   color: #f08080;
 }
+@media all and (max-width: 1065px) {
+  .header-page__header-top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header-page__header-top__main-menu {
+    display: none;
+  }
+  .header-page__header-top__toggle-menu {
+    position: relative;
+  }
+  .header-page__header-top__toggle-menu__btn-burger {
+    font-weight: normal;
+    color: #a0a0a0;
+    cursor: pointer;
+  }
+}
 .header-page__header-middle {
   position: relative;
   display: -webkit-box;
@@ -451,6 +480,7 @@ th {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  height: 87vh;
   color: white;
   z-index: 20;
   /* End __slide */
@@ -486,6 +516,9 @@ th {
   background: #f5f5f5;
 }
 .header-page__header-middle__slide {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -502,15 +535,19 @@ th {
   width: 100%;
   padding: 4rem;
   height: 87vh;
-  background-image: url('../img/office.jpg');
+  background-image: attr(data-image);
+  background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
+  opacity: 0;
+  -webkit-transition: opacity .8s ease;
+  transition: opacity .8s ease;
+  overflow: hidden;
   /* End _slide_active */
 }
 .header-page__header-middle__slide_slide_active {
-  position: absolute;
-  background-image: url('../img/patient.jpg');
   opacity: 1;
+  background-image: attr(data-image);
   z-index: 30;
 }
 .header-page__header-middle__slide__title {

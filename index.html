@@ -5,10 +5,10 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="app/css/style.css">
 	<link rel="stylesheet" href="app/css/font-awesome.css">
-	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 	<script src="app/js/script.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	<script src="app/js/header-gallery.js"></script>
-	<script src="app/lib/jquery-3.3.1.min.js"></script>
+	<script src="app/js/burger-menu.js"></script>
 	<title>Gloryland</title>
 </head>
 <body>
@@ -26,10 +26,25 @@
 					<li class="header-page__header-top__main-menu__item"><a href="#"><i class="fa fa-facebook"></i></a></li>
 					<li class="header-page__header-top__main-menu__item"><a href="#"><i class="fa fa-google-plus"></i></a></li>
 				</ul>
+				<div class="header-page__header-top__toggle-menu">
+					<i class="fa fa-bars fa-3x header-page__header-top__toggle-menu__btn-burger"></i>
+					<nav class="header-page__header-top__toggle-menu__menu">
+						<a href="#" class="header-page__header-top__toggle-menu__menu__item"></a>
+						<a href="#" class="header-page__header-top__toggle-menu__menu__item"></a>
+						<a href="#" class="header-page__header-top__toggle-menu__menu__item"></a>
+						<a href="#" class="header-page__header-top__toggle-menu__menu__item"></a>
+						<a href="#" class="header-page__header-top__toggle-menu__menu__item"></a>
+						<a href="#" class="header-page__header-top__toggle-menu__menu__item"></a>
+						<a href="#" class="header-page__header-top__toggle-menu__menu__item"></a>
+						<a href="#" class="header-page__header-top__toggle-menu__menu__item"></a>
+						<a href="#" class="header-page__header-top__toggle-menu__menu__item"></a>
+					</nav>
+				</div>
 			</div>
 			<!-- End header-top -->
 			<div class="header-page__header-middle">
-				<div class="header-page__header-middle__slide header-page__header-middle__slide_slide_active">
+				<div class="header-page__header-middle__slide header-page__header-middle__slide_slide_active"
+				style="background-image: url('app/img/patient.jpg')">
 					<h1 class="header-page__header-middle__slide__title">Шаблон сайта HTML5</h1>
 					<p class="header-page__header-middle__slide__description">Не следует, однако забывать, что дальнейшее развитие различных форм деятельности играет важную роль в формировании форм развития.</p>
 					<div class="wrapper-btn">
@@ -37,8 +52,16 @@
 						<button class="wrapper-btn__btn">Заказать</button>
 					</div>
 				</div>
-				<div class="header-page__header-middle__slide">
+				<div class="header-page__header-middle__slide" style="background-image: url('app/img/office.jpg')">
 					<h1 class="header-page__header-middle__slide__title">Адаптивный и современный дизайн</h1>
+					<p class="header-page__header-middle__slide__description">Не следует, однако забывать, что дальнейшее развитие различных форм деятельности играет важную роль в формировании форм развития.</p>
+					<div class="wrapper-btn">
+						<button class="wrapper-btn__btn wrapper-btn__btn_active">Подробнее</button>
+						<button class="wrapper-btn__btn">Заказать</button>
+					</div>
+				</div>
+				<div class="header-page__header-middle__slide" style="background-image: url('app/img/patient.jpg')">
+					<h1 class="header-page__header-middle__slide__title">Беслпатная SEO настройка</h1>
 					<p class="header-page__header-middle__slide__description">Не следует, однако забывать, что дальнейшее развитие различных форм деятельности играет важную роль в формировании форм развития.</p>
 					<div class="wrapper-btn">
 						<button class="wrapper-btn__btn wrapper-btn__btn_active">Подробнее</button>
@@ -49,6 +72,7 @@
 				<i class="fa fa-angle-right fa-4x header-page__header-middle__arrow-right"></i>
 				<div class="header-page__header-middle__wrapper-circles">
 					<span class="header-page__header-middle__wrapper-circles__circle header-page__header-middle__wrapper-circles__circle_active"></span>
+					<span class="header-page__header-middle__wrapper-circles__circle"></span>
 					<span class="header-page__header-middle__wrapper-circles__circle"></span>
 				</div>
 			</div>

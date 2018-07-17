@@ -6,7 +6,7 @@
 	.flex-cont(column, nowrap);
 	width: 100%;
 	height: 100vh;
-	overflow: hidden;
+	//overflow: hidden;
 	
 	&__header-top{
 		width: 100%;
@@ -18,6 +18,10 @@
 
 		}
 		/* End __logo */
+		
+		&__toggle-menu{
+			display: none;
+		}
 
 		&__main-menu{
 			.flex-cont(row,nowrap);
@@ -41,13 +45,35 @@
 		}
 		/* End __main-menu */
 
+		@media all and (max-width: 1065px){
+
+			.flex-cont(row, nowrap, space-around, center);
+
+			&__main-menu{
+				display: none;
+			}
+
+			&__toggle-menu{
+				position: relative;
+
+				&__btn-burger{
+					font-weight: normal;
+					color: rgb(160, 160, 160);
+					cursor: pointer;
+				}
+
+			}
+		}
+
 	} 
 	/* End __header-top */
+
 	
 	&__header-middle{
 		position: relative;
 		.flex-cont(column, nowrap, center, center);
 		width: 100%;
+		height: 87vh;
 		color: white;
 		z-index: 20;
 
@@ -85,18 +111,24 @@
 		}
 
 		&__slide{
+			position: absolute;
+			top: 0;
+			left: 0;
 			.flex-cont(column, nowrap, center, center);
 			width: 100%;
 			padding: 4rem;
 			height: 87vh;
-			background-image: url('../img/office.jpg');
+			background-image: attr(data-image);
+			background-attachment: fixed;
 			background-size: cover;
 			background-repeat: no-repeat;
+			opacity: 0;
+			transition: opacity .8s ease;
+			overflow: hidden;
 
 			&_slide_active{
-				position: absolute;
-				background-image: url('../img/patient.jpg');
 				opacity: 1;
+				background-image: attr(data-image);
 				z-index: 30;
 			}
 			/* End _slide_active */
