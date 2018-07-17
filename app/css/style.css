@@ -378,10 +378,12 @@ th {
           align-items: center;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
   /* End __header-top */
   /* End __header-middle */
 }
 .header-page__header-top {
+  position: relative;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -400,6 +402,12 @@ th {
   background-color: white;
   /* End __logo */
   /* End __main-menu */
+  /* End media toggle-menu */
+}
+@media all and (max-width: 668px) {
+  .header-page__header-top__logo {
+    display: none;
+  }
 }
 .header-page__header-top__toggle-menu {
   display: none;
@@ -419,9 +427,9 @@ th {
       -ms-flex-align: center;
           align-items: center;
   list-style: none;
+  font-size: .9rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-size: .9rem;
 }
 .header-page__header-top__main-menu a {
   font-size: 1em;
@@ -451,17 +459,82 @@ th {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    /* End toggle-menu */
   }
   .header-page__header-top__main-menu {
     display: none;
   }
   .header-page__header-top__toggle-menu {
-    position: relative;
+    display: block;
+    /* End btn-burger */
   }
   .header-page__header-top__toggle-menu__btn-burger {
     font-weight: normal;
     color: #a0a0a0;
     cursor: pointer;
+  }
+  .header-page__header-top__toggle-menu__menu {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    -webkit-transform: translate(100%, 100%);
+            transform: translate(100%, 100%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    padding: 3rem;
+    opacity: 0;
+    -webkit-transition-property: opacity, height, -webkit-transform;
+    transition-property: opacity, height, -webkit-transform;
+    transition-property: transform, opacity, height;
+    transition-property: transform, opacity, height, -webkit-transform;
+    -webkit-transition-delay: 0s,0s, 1s;
+            transition-delay: 0s,0s, 1s;
+    background-color: #fafafa;
+    z-index: 500;
+  }
+  .header-page__header-top__toggle-menu__menu_active {
+    -webkit-transform: translate(0, 100%);
+            transform: translate(0, 100%);
+    opacity: 1;
+  }
+  .header-page__header-top__toggle-menu__menu__item {
+    position: relative;
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    font-size: 2rem;
+    line-height: 2.6rem;
+    padding: .4rem;
+    color: #464646;
+    letter-spacing: .2rem;
+    text-align: center;
+    overflow: hidden;
+  }
+  .header-page__header-top__toggle-menu__menu__item:hover {
+    background: #f08080;
+    color: white;
+  }
+  .header-page__header-top__toggle-menu__menu__wrapper-icons {
+    margin-top: 4rem;
+    font-size: 2.6rem;
+  }
+  .header-page__header-top__toggle-menu__menu__wrapper-icons i {
+    margin-left: 1rem;
+  }
+  .header-page__header-top__toggle-menu__menu__wrapper-icons i:hover {
+    color: #f08080;
   }
 }
 .header-page__header-middle {
@@ -483,6 +556,7 @@ th {
   height: 87vh;
   color: white;
   z-index: 20;
+  overflow: hidden;
   /* End __slide */
 }
 .header-page__header-middle__arrow-left,
@@ -515,6 +589,11 @@ th {
 .header-page__header-middle__wrapper-circles__circle_active {
   background: #f5f5f5;
 }
+@media all and (max-width: 668px) {
+  .header-page__header-middle__wrapper-circles {
+    display: none;
+  }
+}
 .header-page__header-middle__slide {
   position: absolute;
   top: 0;
@@ -534,7 +613,7 @@ th {
           align-items: center;
   width: 100%;
   padding: 4rem;
-  height: 87vh;
+  height: inherit;
   background-image: attr(data-image);
   background-attachment: fixed;
   background-size: cover;
@@ -544,6 +623,12 @@ th {
   transition: opacity .8s ease;
   overflow: hidden;
   /* End _slide_active */
+  /* End wrppaer-btn */
+}
+@media all and (max-width: 668px) {
+  .header-page__header-middle__slide {
+    padding: 1.5rem;
+  }
 }
 .header-page__header-middle__slide_slide_active {
   opacity: 1;
@@ -563,8 +648,31 @@ th {
   color: #c8c8c8;
   z-index: 20;
 }
+@media all and (max-width: 650px) {
+  .header-page__header-middle__slide__title {
+    font-size: 2rem;
+  }
+  .header-page__header-middle__slide__description {
+    width: 100%;
+    font-size: 1.2rem;
+  }
+}
 .header-page__header-middle__slide .wrapper-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   z-index: 20;
+  /* End __btn */
 }
 .header-page__header-middle__slide .wrapper-btn__btn {
   outline: none;
@@ -583,6 +691,12 @@ th {
   background: white;
   color: #646464;
 }
+@media all and (max-width: 668px) {
+  .header-page__header-middle__slide .wrapper-btn__btn {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+}
 .header-page__header-middle__slide::after {
   content: '';
   position: absolute;
@@ -597,7 +711,6 @@ th {
 .section1 {
   color: #4D4D4D;
   font-size: 18px;
-  margin-top: 50px;
 }
 .section1__main-block {
   display: -webkit-box;
@@ -606,6 +719,8 @@ th {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background: #f5f5f5;
+  padding: 50px 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -637,9 +752,12 @@ th {
 }
 .section1__main-menu p {
   text-align: center;
+  width: 70%;
 }
 .section1__main-menu {
-  margin: 70px 0 70px 0;
+  padding: 50px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 @media (max-width: 950px) {
   .section1__main-block {
