@@ -187,7 +187,7 @@
 .section__left-block {
   width: 650px;
 }
-.section1 img {
+.section1_img-logo {
   width: 230px;
   border-radius: 120px;
   margin-left: 8%;
@@ -205,7 +205,7 @@
   text-align: center;
 }
 .section1__main-menu {
- margin-top:70px;
+ margin:70px 0 70px 0;
 }
 @media (max-width: 950px) {
   .section1__main-block {
@@ -248,4 +248,55 @@
 	font-size: 16px;
 }
 	}
+	.section1_paralacs {
+background-image: url(../img/chair.jpg);
+color: #FEFEFE;
+padding: 100px 0 100px 0 ;
+width: 100%;
+}
+.section1_blocks_element {
+	box-sizing: border-box;
+	display: flex;
+    justify-content: center;
+	margin:auto;
+	width: 1200px;
+	font-size: 14px;
+}
+.section1_blocks_element h2{
+text-align:center;
+font-size: 19px;
+text-transform:uppercase;
+}
+.section1_blocks_element i{
+	font-size: 40px;
+	color: #E25A5C;
+	border: 1.2px solid #E25A5C;
+	margin-top: 12px;
+	 font-size: 32px;
+    padding: 12px;
+    border-radius: 4px;
+    margin-right: 30px;
+}
+@media (max-width: 1300px) {
+	.section1_blocks_element {
+		width: 900px;
+	}
+}
+@media (max-width: 970px) {
+	.section1_blocks_element{
+		flex-wrap: wrap;
+		justify-content:space-between;
+	}
+	.section1_blocks_element {
+		width: auto;
+		padding:0 100px 0 40px;
+	}
+}
+@media (max-width: 300px) {
+	.section1_blocks_element {
+		padding:0 10px 0 20px;
+	}
+}
+
+
 /* End code Egor Surov */
