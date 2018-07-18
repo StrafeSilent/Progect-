@@ -474,11 +474,10 @@ th {
     cursor: pointer;
   }
   .header-page__header-top__toggle-menu__menu {
+    display: block;
     position: absolute;
-    bottom: 0;
+    top: 100%;
     left: 0;
-    -webkit-transform: translate(100%, 100%);
-            transform: translate(100%, 100%);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -505,8 +504,6 @@ th {
     z-index: 500;
   }
   .header-page__header-top__toggle-menu__menu_active {
-    -webkit-transform: translate(0, 100%);
-            transform: translate(0, 100%);
     opacity: 1;
   }
   .header-page__header-top__toggle-menu__menu__item {
@@ -514,7 +511,7 @@ th {
     display: block;
     width: 100%;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1.7rem;
     line-height: 2.6rem;
     padding: .4rem;
     color: #464646;

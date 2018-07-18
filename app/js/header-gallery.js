@@ -12,7 +12,7 @@ $(document).ready(function(){
 			circles.eq(i).attr('class','header-page__header-middle__wrapper-circles__circle');
 			slides.eq(i).attr('class', 'header-page__header-middle__slide');
 		}
-		circles.eq(cur_index_of_slide).toggleClass('header-page__header-middle__wrapper-circles__circle_active');
+		circles.eq(cur_index_of_slide).toggleClass('animated rubberBand header-page__header-middle__wrapper-circles__circle_active');
 		slides.eq(cur_index_of_slide).toggleClass('header-page__header-middle__slide_slide_active');
 	}
 
