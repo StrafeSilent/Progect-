@@ -6,17 +6,21 @@
 	.flex-cont(column, nowrap);
 	width: 100%;
 	height: 100vh;
-	//overflow: hidden;
+	overflow: hidden;
 	
 	&__header-top{
+		position: relative;
 		width: 100%;
 		.flex-cont(row, nowrap, space-between, center);
 		padding: .5rem 4rem;
 		background-color: white;
 
-		&__logo{
-
+		@media all and (max-width: 668px){
+			&__logo{
+				display: none;
+			}
 		}
+
 		/* End __logo */
 		
 		&__toggle-menu{
@@ -26,8 +30,8 @@
 		&__main-menu{
 			.flex-cont(row,nowrap);
 			list-style: none;
-			box-sizing: border-box;
 			font-size: .9rem;
+			box-sizing: border-box;
 			& a{
 				font-size: 1em;
 				color: rgb(100, 100, 100);
@@ -54,16 +58,71 @@
 			}
 
 			&__toggle-menu{
-				position: relative;
+				display: block;
 
-				&__btn-burger{
+				&__btn-burger {
 					font-weight: normal;
 					color: rgb(160, 160, 160);
 					cursor: pointer;
 				}
 
+				&__menu {
+					display: block;
+					position: absolute;
+					top: 100%;
+					left: 0;
+					//transform: translate(0, 0);
+					.flex-cont(column, nowrap, center, center);
+					width: 100%;
+					padding: 3rem;
+					opacity: 0;
+					transition-property: transform, opacity, height;
+					transition-delay: 0s,0s, 1s;
+					background-color: rgb(250, 250, 250);
+					z-index: 500;
+					
+					&_active{
+						//transform: translate(0, 0);
+						opacity: 1;
+					}
+
+					&__item{
+						position: relative;
+						display: block;
+						width: 100%;
+						text-decoration: none;
+						font-size: 1.7rem;
+						line-height: 2.6rem;
+						padding: .4rem;
+						color: rgb(70, 70, 70);
+						letter-spacing: .2rem;
+						text-align: center;
+						overflow: hidden;
+			
+						&:hover{
+							background: @main-color;
+							color: white;
+						}
+			
+					}
+
+					&__wrapper-icons{
+						margin-top: 4rem;
+						font-size: 2.6rem;
+						& i{
+							margin-left: 1rem;
+							&:hover{
+								color: @main-color;
+							}
+						}
+					}
+
+				}
+				/* End btn-burger */
 			}
+			/* End toggle-menu */
 		}
+		/* End media toggle-menu */
 
 	} 
 	/* End __header-top */
@@ -76,6 +135,7 @@
 		height: 87vh;
 		color: white;
 		z-index: 20;
+		overflow: hidden;
 
 		&__arrow-left, &__arrow-right{
 			position: absolute;
@@ -108,6 +168,10 @@
 				}
 			}
 
+			@media all and (max-width: 668px){
+				display: none;
+			}
+
 		}
 
 		&__slide{
@@ -117,7 +181,7 @@
 			.flex-cont(column, nowrap, center, center);
 			width: 100%;
 			padding: 4rem;
-			height: 87vh;
+			height: inherit;
 			background-image: attr(data-image);
 			background-attachment: fixed;
 			background-size: cover;
@@ -125,6 +189,10 @@
 			opacity: 0;
 			transition: opacity .8s ease;
 			overflow: hidden;
+
+			@media all and (max-width:668px){
+				padding: 1.5rem;
+			}
 
 			&_slide_active{
 				opacity: 1;
@@ -148,7 +216,18 @@
 				z-index: 20;
 			}
 
+			@media all and (max-width:650px) {
+				&__title {
+					font-size: 2rem;
+				}
+				&__description {
+					width: 100%;
+					font-size: 1.2rem;
+				}
+			}
+
 			.wrapper-btn{
+				.flex-cont(row, wrap, center, center);
 				z-index: 20;
 
 				&__btn{
@@ -170,9 +249,15 @@
 						color: rgb(100, 100, 100);
 					}
 
-				}
+					@media all and (max-width: 668px){
+						font-size: 1rem;
+						margin-top: 1rem;
+					}
 
+				}
+				/* End __btn */
 			}
+			/* End wrppaer-btn */
 
 
 			&::after{
@@ -200,11 +285,13 @@
 .section1 {
   color: #4D4D4D;
   font-size: 18px;
-  margin-top: 50px;
+  //margin-top: 50px;
 }
 .section1__main-block {
   display: flex;
   justify-content: center;
+  background: rgb(245, 245, 245);
+  padding: 50px 0;
   box-sizing: border-box;
 }
 .section1__caption {
@@ -235,9 +322,11 @@
 }
 .section1__main-menu p {
   text-align: center;
+  width: 70%;
 }
 .section1__main-menu {
- margin:70px 0 70px 0;
+	padding: 50px;
+ 	box-sizing: border-box;
 }
 @media (max-width: 950px) {
   .section1__main-block {
@@ -268,7 +357,7 @@
     font-size: 16px;
   }
   .section1__main-menu {
- margin-top:30px;
+    margin-top:30px;
 }
 }
 
@@ -281,10 +370,14 @@
 }
 	}
 	.section1_paralacs {
-background-image: url(../img/chair.jpg);
-color: #FEFEFE;
-padding: 100px 0 100px 0 ;
-width: 100%;
+   background-image: linear-gradient(rgba(30, 30, 30, .7), rgba(30, 30, 30, .7)), url(../img/chair.jpg);
+    background-attachment: fixed;
+    background-size:100% auto;
+    color: #FEFEFE;
+    padding: 100px 0 100px 0 ;
+    width: 100%;
+    position:relative;
+
 }
 .section1_blocks_element {
 	box-sizing: border-box;
@@ -295,9 +388,9 @@ width: 100%;
 	font-size: 14px;
 }
 .section1_blocks_element h2{
-text-align:center;
-font-size: 19px;
-text-transform:uppercase;
+    text-align:center;
+    font-size: 19px;
+    text-transform:uppercase;
 }
 .section1_blocks_element i{
 	font-size: 40px;
@@ -337,4 +430,61 @@ text-transform:uppercase;
 }
 
 
+//section3 - start
+.section3__top-block h1{
+    color: #E35A5C;
+    font-size: 2.2rem;
+    text-align:center;
+    text-transform:uppercase;
+}
+.section3__top-block p {
+	font-size: 18px;
+    text-align:center;
+    color: #5A5A5A;
+}
+.section3__top-block {
+	width: 30%;
+	margin:0 auto;
+	box-sizing: border-box;
+	margin: 0 0 0 420px;
+}
+.section3{
+	margin-top:200px;
+}
+.section3__main-block {
+	display: flex;
+	justify-content: center;
+	box-sizing: border-box;
+}
+.acc {
+	display: none;
+}
+.section3__accord-button {
+	display: block;
+	color: #5A5A5A;
+	width: 500px;
+	height: 50px;
+	border: 2px solid #fff;
+}
+.section3__accord-button i {
+   margin-right: 10px;
+   font-size: 22px;
+}
+.section3__accord-button:hover {
+	color:#E35A5C;
+}
+.section3__accord-button i:focus {
+    color:#fff;
+}
+.section3__accord-button:focus{
+	background-color: #E35A5C;
+	color: #fff;
+}
+.section3_elements-accrod p{
+	width: 500px;
+}
+.icon2 {
+	display: none;
+	opacity: 0;
+}
 /* End code Egor Surov */
