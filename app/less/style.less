@@ -381,7 +381,6 @@
 	font-size: 16px;
 }
 	}
-<<<<<<< HEAD
 .section1_paralacs {
 	position: relative;
 	background-image: linear-gradient(rgba(30, 30, 30, .7), rgba(30, 30, 30, .7)), url(../img/chair.jpg);
@@ -392,18 +391,19 @@
 	padding: 100px 0 100px 0 ;
 	width: 100%;
 	z-index: 1;
-=======
-	.section1_paralacs {
-   background-image: linear-gradient(rgba(30, 30, 30, .7), rgba(30, 30, 30, .7)), url(../img/chair.jpg);
-    background-attachment: fixed;
-    background-size:100% auto;
-    color: #FEFEFE;
-    padding: 100px 0 100px 0 ;
-    width: 100%;
-    position:relative;
-
->>>>>>> 699e4306da00de4afe6e80f30c14e9fb3e7b4beb
 }
+
+	.section1_paralacs {
+	   background-image: -webkit-linear-gradient(rgba(30, 30, 30, .7), rgba(30, 30, 30, .7)), url(../img/chair.jpg);
+	   background-image: -o-linear-gradient(rgba(30, 30, 30, .7), rgba(30, 30, 30, .7)), url(../img/chair.jpg);
+	   background-image: linear-gradient(rgba(30, 30, 30, .7), rgba(30, 30, 30, .7)), url(../img/chair.jpg);
+	    background-attachment: fixed;
+	    background-size:100% auto;
+	    color: #FEFEFE;
+	    padding: 100px 0 100px 0 ;
+	    width: 100%;
+	    position:relative;
+	}
 
 .section1_blocks_element {
 	box-sizing: border-box;
@@ -504,6 +504,7 @@ z-index: 3;
 }
 .section3__accord-button:hover {
 	color:#E35A5C;
+	transition: 0.2s;
 }
 .section3__accord-button i:focus {
     color:#fff;
@@ -516,65 +517,136 @@ z-index: 3;
 	width: 500px;
 }
 .icon2 {
-	display: none;
-	opacity: 0;
+opacity: 0;
+}
+.icon1 {
+	margin-left: 270px;
 }
 /* End code Egor Surov */
 
 
 .our-staff {
-	.flex-cont(column, nowrap, center, center);
+	.flex-cont(column, nowrap, flex-end, center);
 	width: 100%;
 	padding: 6rem 4rem;
+	overflow-x: hidden;
+	box-sizing: border-box;
 
 	&__title {
 		text-transform: uppercase;
 		font-size: 2.2rem;
+		text-align: center;
 		color: @main-color;
 	}
 	/* End __title */
 
 	&__description {
+		text-align: center;
 		margin: 2rem 0;
 		color: rgb(70, 70, 70);
 	}
 	/* End __description */
 
+
 	&__container-slider {
-		.flex-cont(row, nowrap, flex-start, flex-start);
-		width: 100%;
-		margin-top: 2rem;
+		position: relative;
+		.flex-cont(column, nowrap, center, flex-start);
+		width: 1144px;
+		margin-top: 1rem;
+		padding: .2rem 0;
 		overflow-x: scroll;
-		
-		&__slide {
-			.flex-cont(column, nowrap, flex-start, center);
+		overflow-y: unset;
+		box-sizing: border-box;
+	
+		&__wrapper-circles {
+			position: absolute;
+			top: 0;
+			right: 0;
+			margin-bottom: 1rem;
 
-			&__author {
-				font-size: 1.2rem;
-				font-weight: bold;
-				margin-top: .7rem;
-				color: rgb(80, 80, 80);
-			}
+			&__circle {
+				display: inline-block;
+				width: 1rem;
+				height: 1rem;
+				border: .1rem solid @main-color;
+				border-radius: .3rem;
 
-			&__proffesion {
-				margin: .7rem 0;
-				font-size: 1rem;
-				text-transform: uppercase;
-				color: @main-color;
-			}
+				&_active{
+					background-color: @main-color;
+				}
 
-			&__opinion {
-				color: rgb(90, 90, 90);
-				text-align: center;
 			}
+			/* End __circle */
 
 		}
-		&__slide:not(:first-of-type) {
-			margin-left: 2rem;
-		}
-		/* End __slide */
+		/* End __wrapper-circles */
 
-		&::-webkit-scrollbar{
+		&__slider-line{
+			.flex-cont(row, nowrap, flex-start, flex-start);
+			box-sizing: border-box;
+			margin-top: 2rem;
+
+			&__slide {
+				.flex-cont(column, nowrap, flex-start, center);
+				width: auto;
+
+				&__icon{
+					width: auto;
+					//box-shadow: 0 0 0 2px white, 0 0 0 4px @main-color;
+				}
+
+				@media all and (max-width: 1200px){
+					&__icon {
+						width: 14rem;
+					}
+				}
+
+				@media all and (max-width: 981px){
+					&__icon {
+						width: 16rem;
+					}
+				}
+
+				@media all and (max-width: 881px){
+					&__icon {
+						width: 18rem;
+					}
+				}
+
+				@media all and (max-width: 661px){
+					&__icon {
+						width: 22rem;
+					}
+				}
+
+				&__author {
+					font-size: 1.2rem;
+					font-weight: bold;
+					margin-top: .7rem;
+					color: rgb(80, 80, 80);
+				}
+
+				&__proffesion {
+					margin: .7rem 0;
+					font-size: 1rem;
+					text-transform: uppercase;
+					color: @main-color;
+				}
+
+				&__opinion {
+					color: rgb(90, 90, 90);
+					text-align: center;
+				}
+
+			}
+			&__slide:not(:first-of-type) {
+				margin-left: 2rem;
+			}
+			/* End __slide */
+		}
+		/* End __slide-line */
+
+		&::-webkit-scrollbar {
 			width: 4px;
 			background-color: transparent;
 		}
