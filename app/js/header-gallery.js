@@ -33,7 +33,7 @@ $(document).ready(function(){
 		} else {
 			return;
 		}
-	}, 4500);
+	}, 8500);
 
 	btn_arrow_left.on('click', function(){
 		if(cur_index_of_slide - 1 >= 0){
