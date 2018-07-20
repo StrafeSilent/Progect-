@@ -9,6 +9,10 @@
 	box-sizing: border-box;
 }
 
+body{
+	overflow-x: hidden;
+}
+
 .header-page{
 	.flex-cont(column, nowrap);
 	width: 100%;
@@ -556,12 +560,10 @@ opacity: 0;
 		padding: .2rem 0;
 		overflow-x: scroll;
 		overflow-y: unset;
+		outline: 2px solid red;
 		box-sizing: border-box;
 	
 		&__wrapper-circles {
-			position: absolute;
-			top: 0;
-			right: 0;
 			margin-bottom: 1rem;
 
 			&__circle {
@@ -585,6 +587,7 @@ opacity: 0;
 			.flex-cont(row, nowrap, flex-start, flex-start);
 			box-sizing: border-box;
 			margin-top: 2rem;
+			outline: 2px solid red;
 
 			&__slide {
 				.flex-cont(column, nowrap, flex-start, center);
@@ -601,19 +604,19 @@ opacity: 0;
 					}
 				}
 
-				@media all and (max-width: 981px){
+				@media all and (max-width: 980px){
 					&__icon {
 						width: 16rem;
 					}
 				}
 
-				@media all and (max-width: 881px){
+				@media all and (max-width: 880px){
 					&__icon {
 						width: 18rem;
 					}
 				}
 
-				@media all and (max-width: 661px){
+				@media all and (max-width: 660px){
 					&__icon {
 						width: 22rem;
 					}
