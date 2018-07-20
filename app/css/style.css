@@ -775,7 +775,7 @@ th {
   text-transform: uppercase;
 }
 .section3__top-block p {
-  font-size: 18px;
+  font-size: 16px;
   text-align: center;
   color: #5A5A5A;
 }
@@ -799,9 +799,11 @@ th {
 .section3__accord-button {
   display: block;
   color: #5A5A5A;
-  width: 500px;
-  height: 50px;
+  width: 600px;
+  height: 60px;
   border: 2px solid #fff;
+  outline: none;
+  padding: 0 0 0 180px;
 }
 .section3__accord-button i {
   margin-right: 10px;
@@ -821,10 +823,112 @@ th {
 .section3_elements-accrod p {
   width: 500px;
 }
-.icon2 {
-  opacity: 0;
-}
 .icon1 {
-  margin-left: 270px;
+  margin-left: 170px;
+}
+.openAccord {
+  display: block;
+}
+.section3__accord-horizon-block {
+  box-sizing: border-box;
+}
+.section3__accord-horizon-block button {
+  color: #5A5A5A;
+  width: 100px;
+  height: 40px;
+  border: 2px solid #fff;
+  outline: none;
+}
+.section3__accord-horizon-block button:focus {
+  border-top: 1px solid #E35A5C;
+  border-radius: 10px;
+}
+.section3__accord-horizon-block p {
+  font-size: 14px;
+}
+.section3__horizon-main_text-1,
+.section3__horizon-main_text-2,
+.section3__horizon-main_text-3,
+.section3__horizon-main_text-4 {
+  width: 500px;
+  color: #6E6E6E;
+  font-size: 14px;
+  margin-left: 40px;
+}
+.section3__horizon-main_text-1,
+.section3__horizon-main_text-2,
+.section3__horizon-main_text-3,
+.section3__horizon-main_text-4 {
+  display: none;
+  flex: none;
+}
+.section3__horizon-main_text-1 {
+  display: block;
+}
+.section3__horizon-main_text-1 img {
+  width: 50%;
+  float: left;
+  margin: 20px 20px 20px 0;
+}
+@media (max-width: 1200px) {
+  .section3__horizon-main_text-1,
+  .section3__horizon-main_text-2,
+  .section3__horizon-main_text-3,
+  .section3__horizon-main_text-4 {
+    width: 300px;
+  }
+  .section3__top-block {
+    margin-left: 100px;
+  }
+  .section3_elements-accrod p {
+    width: 300px;
+    text-align: center;
+    margin-left: 50px;
+  }
+  .section3__accord-button {
+    width: 300px;
+    height: 50px;
+    padding: 0;
+  }
+  .icon1 {
+    margin-left: 70px;
+  }
+}
+@media (max-width: 830px) {
+  .section3__main-block {
+    flex-wrap: wrap;
+    padding: 0 10px 0 10px;
+  }
+}
+@media (max-width: 400px) {
+  .section3_elements-accrod p {
+    width: 200px;
+    margin-left: 30px;
+  }
+  .section3__accord-button {
+    width: 200px;
+    height: 30px;
+  }
+  .section3__top-block {
+    margin: 0 auto;
+    width: 100%;
+  }
+  .section3__main-block {
+    display: block;
+  }
+  .section3__top-block {
+    margin-left: 10px;
+  }
+  .section3_elements-accrod p {
+    width: 100%;
+    margin-left: 10px;
+  }
+  .section3__horizon-main_text-1,
+  .section3__horizon-main_text-2,
+  .section3__horizon-main_text-3,
+  .section3__horizon-main_text-4 {
+    width: 100%;
+    margin-left: 10px;
+  }
 }
 /* End code Egor Surov */
