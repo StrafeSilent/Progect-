@@ -6,6 +6,12 @@ $(document).ready(function(){
 	var cur_index_of_slide = 0,
 		is_auto_slide = true;
 	
+	$(window).scroll(function() {
+		let top = $(this).scrollTop();
+		$('.header-page__header-middle__arrow-left, .header-page__header-middle__arrow-right, .header-page__header-middle__wrapper-circles, .header-page__header-middle__slide h1, .header-page__header-middle__slide p, .header-page__header-middle__slide button').css({
+			transform: 'translate(0%, -'+ top/1.5 +'%)'
+		});
+	});
 
 	function toSlide(){
 		for(var i = 0; i < circles.size(); i++){

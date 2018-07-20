@@ -628,8 +628,12 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 0;
-  -webkit-transition: opacity .8s ease;
-  transition: opacity .8s ease;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  transition-property: opacity, transform;
+  transition-property: opacity, transform, -webkit-transform;
+  -webkit-transition-duration: .8s, 0s;
+          transition-duration: .8s, 0s;
   overflow: hidden;
   /* End _slide_active */
   /* End wrppaer-btn */
@@ -646,7 +650,7 @@ body {
 }
 .header-page__header-middle__slide__title {
   font-size: 3.4rem;
-  margin: 0;
+  margin: 1rem 0;
   text-align: center;
   z-index: 20;
 }
@@ -654,6 +658,7 @@ body {
   width: 80%;
   font-size: 1.6rem;
   text-align: center;
+  margin-bottom: 3rem;
   color: #c8c8c8;
   z-index: 20;
 }

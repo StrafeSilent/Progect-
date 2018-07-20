@@ -198,7 +198,8 @@ body{
 			background-size: cover;
 			background-repeat: no-repeat;
 			opacity: 0;
-			transition: opacity .8s ease;
+			transition-property: opacity, transform;
+			transition-duration: .8s, 0s;
 			overflow: hidden;
 
 			@media all and (max-width:668px){
@@ -214,7 +215,7 @@ body{
 
 			&__title{
 				font-size: 3.4rem;
-				margin: 0;
+				margin: 1rem 0;
 				text-align: center;
 				z-index: 20;
 			}
@@ -223,6 +224,7 @@ body{
 				width: 80%;
 				font-size: 1.6rem;
 				text-align: center;
+				margin-bottom: 3rem;
 				color: rgb(200, 200, 200);
 				z-index: 20;
 			}
@@ -664,7 +666,9 @@ z-index: 3;
 			&_active {
 				background-color: @main-color;
 			}
- 
+ 			
+			
+
 			@media all and (min-width: 861px) {
 				&:not(:first-of-type):not(:nth-of-type(2)) {
 					display: none;
